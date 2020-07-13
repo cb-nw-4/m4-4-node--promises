@@ -22,4 +22,6 @@ const getIssPosition = () => {
     .catch((err) => console.log('Error: ', err));
 };
 
-getIssPosition().then((response) => console.log(response));
+// getIssPosition().then((response) => console.log(response));
+
+module.exports = { getIssPosition };

@@ -1,5 +1,13 @@
 # Module 3-6 - APIs and Promises
 
+## Prep Work
+
+### Pre-lecture content
+
+- READ: https://medium.com/javascript-in-plain-english/truly-understanding-promises-in-javascript-cb31ee487860
+- WATCH: https://youtu.be/PoRJizFvM7s
+- READ: https://codeburst.io/playing-with-javascript-promises-a-comprehensive-approach-25ab752c78c3
+
 ## Setup
 
 - `yarn install`
@@ -170,13 +178,13 @@ Getting the `lat` and `lng` of an address. Write a function that returns the coo
 
 <img src="./__lecture/assets/dotenv.png" />
 
-2. Complete the code of this function to return a `Promise` for a lat/lng object.
-3. Once you have it working, pass it a few address to see what the responses look like.
-4. Make sure to only return an object with lat/lng and not the whole response. _Every API response is different. It will take some trial and error to find the data you're looking for._
-
 ### Note:
 
 - Opencage has its own module to help write requests. It's already been installed and is ready to use. You can read up on it here: [https://www.npmjs.com/package/opencage-api-client](https://www.npmjs.com/package/opencage-api-client)
+
+2. Complete the code of this function to return a `Promise` for a lat/lng object.
+3. Once you have it working, pass it a few address to see what the responses look like.
+4. Make sure to only return an object with lat/lng and not the whole response. _Every API response is different. It will take some trial and error to find the data you're looking for._
 
 ```js
 // Example

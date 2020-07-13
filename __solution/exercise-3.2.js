@@ -30,6 +30,8 @@ const getPositionFromAddress = (address) => {
     .catch((error) => console.log('error', error.message));
 };
 
-getPositionFromAddress(
-  '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'
-).then((response) => console.log(response));
+// getPositionFromAddress(
+//   '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'
+// ).then((response) => console.log(response));
+
+module.exports = { getPositionFromAddress };
