@@ -79,4 +79,18 @@ const getDistance = (pos1, pos2) => {
 // getDistanceFromIss(
 //   '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'
 // ).then((data) => console.log(data));
-// // ----------------------------------------------
+// ----------------------------------------------
+
+// VERSION 6 (Use async/await and Promise.all)
+// ----------------------------------------------
+// const getDistanceFromIss = async (address) => {
+//   const [pos1, pos2] = await Promise.all([
+//     getIssPosition(),
+//     getPositionFromAddress(address),
+//   ]);
+//   return getDistance(pos1, pos2);
+// };
+// getDistanceFromIss('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8')
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+// ----------------------------------------------
