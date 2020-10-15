@@ -1,4 +1,4 @@
-# Module 3-6 - APIs and Promises
+# 4-4 - Node JS - Callbacks and Promises
 
 ## Prep Work
 
@@ -24,9 +24,9 @@ Here is an example. There is nothing to do for this example. You can use it as a
 const compareToTen = (num) => {
   myPromise = new Promise((resolve, reject) => {
     if (num > 10) {
-      resolve(num + ' is greater than 10, success!');
+      resolve(num + " is greater than 10, success!");
     } else {
-      reject(num + ' is less than 10, error!');
+      reject(num + " is less than 10, error!");
     }
   });
   return myPromise;
@@ -96,14 +96,14 @@ Write a Promise using `request-promise` that contacts the `/hello` API. Return t
 
 ```js
 const testGreeting = () => {
-  return request('<API_URL') // 1
+  return request("<API_URL") // 1
     .then((response) => {
       return; // 2
     })
     .then((parsedResponse) => {
       return; // 3
     })
-    .catch((err) => console.log('Error: ', err));
+    .catch((err) => console.log("Error: ", err));
 };
 ```
 
@@ -189,7 +189,7 @@ Getting the `lat` and `lng` of an address. Write a function that returns the coo
 ```js
 // Example
 getPositionFromAddress(
-  '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'
+  "1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8"
 ).then((response) => console.log(response));
 // this should return "{ lat: 45.497118, lng: -73.579044 }"
 // (Concordia University)
@@ -201,7 +201,7 @@ Getting the address of provided coordinates. Write a function that returns the a
 
 ```js
 // Example
-getAddressFromPosition('48.858262', '2.294496').then((response) =>
+getAddressFromPosition("48.858262", "2.294496").then((response) =>
   console.log(response)
 );
 // this should return "5 Avenue Anatole France, 75007 Paris, France"
@@ -233,7 +233,7 @@ module.exports = { nameOfFunction };
 - `require` the function in 3.4 with
 
 ```js
-const { nameOfFunction } = require('<REL_PATH_TO_FILE>');
+const { nameOfFunction } = require("<REL_PATH_TO_FILE>");
 ```
 
 - You will need to use this "helper" function. It returns the distance between two points.
