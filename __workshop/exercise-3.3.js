@@ -22,3 +22,4 @@ function getAddressFromPosition(lat, lng) {
 getAddressFromPosition("48.8584", "2.2945").then((response) =>
   console.dir(response, {depth:null})
 );
+
