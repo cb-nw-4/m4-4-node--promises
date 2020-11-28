@@ -3,7 +3,7 @@
 # dependencies
 node_modules/
 node_modules/**/*
-.env
+*.env
 
 # misc
 .DS_Store
