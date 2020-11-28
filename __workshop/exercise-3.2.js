@@ -6,11 +6,18 @@ require('dotenv').config();
 
 const getPositionFromAddress = (address) => {
   const requestObj = {
-    key: '<MY_API_KEY>',
-    q: '<QUERY_STRING>',
+    key: 'f3112f853c2d47d6bf22d79fdad588fe',
+    q: address
   };
-
-  // return something...
+  return opencage
+    .geocode(requestObj)
+    .then((data) => {
+      // console.log(JSON.stringify(data));
+      // console.log(data.results[0].geometry, 'TEST');
+      return data.results[0].geometry;
+    })
+  // console.log(requestObj);
+  
 };
 
 getPositionFromAddress(
