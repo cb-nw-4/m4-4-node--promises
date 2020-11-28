@@ -4,4 +4,17 @@
 // require the 'request-promise' module.
 const request = require('request-promise');
 
-// get the code you wrote in 2.2 and paste it here...
+const greeting = (langCode) => {
+    return request(`https://journeyedu.herokuapp.com/hello/${langCode}`) // 1
+      .then((response) => JSON.parse(response))
+      .then((response) => {
+        return response.data // 2
+      })
+      .catch((err) => {
+        return err.error ? JSON.parse(err.error) : err;
+      });
+  };
+  
+// Testing
+greeting('it').then((result) => console.log(result)); // { lang: 'Italian', code: 'IT', text: 'Salve' }
+greeting('ch').then((result) => console.log(result)); // {status: 404, data: { code: 'ch' }, message: 'Cannot find that language code'}
