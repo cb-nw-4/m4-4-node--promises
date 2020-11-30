@@ -13,6 +13,6 @@ const greeting = (langCode) => {
 };
 
 // Testing
-greeting('zz')
+greeting('fr')
   .then((result) => console.log(result)) // { lang: "French", code: "FR", text: "Bonjour" }
   .catch((err) => console.log(JSON.parse(err.error)));
