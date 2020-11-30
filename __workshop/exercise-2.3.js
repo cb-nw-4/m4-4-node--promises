@@ -4,4 +4,17 @@
 // require the 'request-promise' module.
 const request = require('request-promise');
 
-// get the code you wrote in 2.2 and paste it here...
+const greeting = (langCode) => {
+    return request(`https://journeyedu.herokuapp.com/hello/${langCode}`)
+        .then((response) => JSON.parse(response))
+        .then((parsedResponse) => {
+            return parsedResponse.data;
+    })
+        .catch((err) => {
+            return err.error ? JSON.parse(err.error) : err;
+    })
+};
+
+greeting('fr').then((result) => console.log(result));
+greeting('en').then((result) => console.log(result));
+greeting('gm').then((result) => console.log(result));
