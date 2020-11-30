@@ -32,11 +32,11 @@ const sortWords = (array) => {
 
 // Calling (testing)
 makeAllCaps(arrayOfWords)
-  .then(sortWords)
+  .then((words) => sortWords(words))
   .then((result) => console.log(result))
   .catch((error) => console.log(error));
 
 makeAllCaps(complicatedArray)
-  .then(sortWords)
+  .then((words) => sortWords(words))
   .then((result) => console.log(result))
   .catch((error) => console.log(error));
