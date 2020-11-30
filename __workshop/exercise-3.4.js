@@ -11,11 +11,10 @@ const getDistance = (pos1, pos2) => {
   );
 };
 
-const getDistanceFromIss = (address) => {
-  return getPositionFromAddress(address)
-  .then((data) => {
-    return getDistance(data, getIssPosition)
-  })
+const getDistanceFromIss = async (address) => {
+  const pos1 = await getIssPosition();
+  const pos2 = await getPositionFromAddress(address);
+  return getDistance(pos1, pos2);
 };
 
 getDistanceFromIss(

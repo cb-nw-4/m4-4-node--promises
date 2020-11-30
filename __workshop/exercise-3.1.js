@@ -22,6 +22,6 @@ const getIssPosition = () => {
     });
 };
 
-getIssPosition().then((result) => console.log(result));
+// getIssPosition().then((result) => console.log(result));
 
 module.exports = { getIssPosition };
