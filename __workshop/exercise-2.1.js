@@ -1,3 +1,4 @@
+const { get } = require('request-promise');
 // Exercise 2.1 - Testing
 // ----------------------
 
@@ -5,12 +6,12 @@
 const request = require('request-promise');
 
 const testGreeting = () => {
-  return request('<API_URL') // 1
-    .then((response) => {
-      return; // 2
+  return request('https://journeyedu.herokuapp.com/hello') // 1
+    .then(response => {
+     return JSON.parse(response) // 2
     })
     .then((parsedResponse) => {
-      return; // 3
+      return parsedResponse.data.text; // 3
     })
     .catch((err) => console.log('Error: ', err));
 };
