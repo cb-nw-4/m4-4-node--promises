@@ -19,11 +19,11 @@ const address2 = '400 Chisholm Drive, Milton, ON L9T 5V6';
 
 // Usage when called from node
 const getPositionFromAddress = (address) => {
-  promise = opencage
+  myPromise = opencage
     .geocode({ q: address })
     .then((data) => data);
 
-  return promise;
+  return myPromise;
 }
 
 getPositionFromAddress(address1)
@@ -33,3 +33,5 @@ getPositionFromAddress(address1)
     }
   })
   .catch((error) => console.log(error));
+
+module.exports = { getPositionFromAddress };
