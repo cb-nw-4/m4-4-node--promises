@@ -8,10 +8,11 @@ const request = require('request-promise');
 const getIssPosition = () => {
     return request('http://api.open-notify.org/iss-now.json') // 1
       .then((response) => {
+        console.log(response)
         return JSON.parse(response); 
       })
       .then((parsedResponse) => {
-        return newObj = {'lat': parseFloat(parsedResponse.iss_position.longitude), 'lng': parseFloat(parsedResponse.iss_position.longitude)} ;
+        return newObj = {'lat': parseFloat(parsedResponse.iss_position.latitude), 'lng': parseFloat(parsedResponse.iss_position.longitude)} ;
       })
       .catch((err) => console.log('Error: ', err));
   
