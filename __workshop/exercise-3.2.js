@@ -6,13 +6,22 @@ require('dotenv').config();
 
 const getPositionFromAddress = (address) => {
   const requestObj = {
-    key: '<MY_API_KEY>',
-    q: '<QUERY_STRING>',
+    key: process.env.OPENCAGE_API_KEY,
+    q: address
   };
-
-  // return something...
+  return opencage
+    .geocode(requestObj)
+    .then((data) => {
+      // console.log(data.results[0].geometry, 'TEST');
+      // console.dir(data, {depth: null});
+      return data.results[0].geometry;
+    })
+  // console.log(requestObj);
+  
 };
 
-getPositionFromAddress(
-  '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'
-).then((response) => console.log(response));
+// getPositionFromAddress(
+//   '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'
+// ).then((response) => console.log(response));
+
+module.exports = { getPositionFromAddress };
