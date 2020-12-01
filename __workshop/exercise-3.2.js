@@ -6,12 +6,20 @@ require('dotenv').config();
 
 const getPositionFromAddress = (address) => {
   const requestObj = {
-    key: '<MY_API_KEY>',
-    q: '<QUERY_STRING>',
+    key: process.env.OPENCAGE_API_KEY,
+    q: address,
   };
 
   // return something...
-};
+  return opencage
+  .geocode(requestObj)
+  .then((data) => {
+    let address = data.results[0];
+    return address.geometry;
+  })
+  .catch((err) => console.log('Error: ', err));  
+  }
+
 
 getPositionFromAddress(
   '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'
