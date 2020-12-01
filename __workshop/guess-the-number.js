@@ -1,9 +1,8 @@
 var inquirer = require('inquirer');
 
 const hiddenNumber =Math.floor(Math.random()* 100);
-console.log(hiddenNumber)
+//console.log(hiddenNumber)
 let numberOfGuess = 5;
-var output = [];
 
 var questions = [{
     type:'input',
