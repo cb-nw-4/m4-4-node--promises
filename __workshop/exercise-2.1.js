@@ -5,12 +5,14 @@
 const request = require('request-promise');
 
 const testGreeting = () => {
-  return request('<API_URL') // 1
+  return request('https://journeyedu.herokuapp.com/hello') 
     .then((response) => {
-      return; // 2
+      const parsedResponse = JSON.parse(response);
+      return parsedResponse; 
     })
     .then((parsedResponse) => {
-      return; // 3
+      const result = parsedResponse.data.text;
+      return result; 
     })
     .catch((err) => console.log('Error: ', err));
 };
