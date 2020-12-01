@@ -10,18 +10,18 @@ const getDistance = (pos1, pos2) => {
   );
 };
 
-// const getDistanceFromIss = (address) => {
-//   myPromise = new Promise((resolve, reject) => {
-
-//   })
-// };
-
-getIssPosition()
+const getDistanceFromIss = (address) => {
+  getPositionFromAddress(address)
   .then((firstResult) => 
-    getPositionFromAddress('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8')
+    getIssPosition(address)
       .then((secondResult) => console.log(getDistance(firstResult, secondResult)))
-);
+    );
+};
 
+getDistanceFromIss('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8');
 
-
-// getDistance( getIssPosition, getPositionFromAddress )
+// getIssPosition()
+//   .then((firstResult) => 
+//     getPositionFromAddress('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8')
+//       .then((secondResult) => console.log(getDistance(firstResult, secondResult)))
+// );
