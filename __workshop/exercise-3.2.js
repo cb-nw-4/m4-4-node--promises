@@ -27,5 +27,9 @@ const getPositionFromAddress = (address) => {
 }
 
 getPositionFromAddress(address1)
-  .then((response) => console.log(response.results[0].geometry))
+  .then((response) => {
+    for (let i = 0; i < Number(response.total_results); i++) {
+      console.log(response.results[i].geometry)
+    }
+  })
   .catch((error) => console.log(error));
