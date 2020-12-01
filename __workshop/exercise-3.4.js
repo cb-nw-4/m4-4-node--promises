@@ -23,4 +23,6 @@ const getDistanceFromIss = (address) => {
 };
 
 getDistanceFromIss('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8').then((response) =>
-console.log("Exercise 3-4:", response));
+  console.log("Exercise 3-4:", response));
+  
+

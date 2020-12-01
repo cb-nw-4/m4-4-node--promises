@@ -10,7 +10,9 @@ const greeting = (langCode) => {
     .then((parsedResponse) => {
       return parsedResponse.data; // 2
     })
-    .catch((err) => console.log('Error: ', err));
+    .catch((err) => {      
+      return err.error ? JSON.parse(err.error) : err;       
+    });
 };
 
 // Testing
