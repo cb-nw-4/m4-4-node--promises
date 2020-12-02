@@ -1,18 +1,28 @@
-// Exercise 3.2 - `getAddressPosition`
+// Exercise 3.2 - `getPositionFromAddress`
 // ---------------------------------
 
-const opencage = require('opencage-api-client');
-require('dotenv').config();
+const opencage = require("opencage-api-client");
+require("dotenv").config();
 
 const getPositionFromAddress = (address) => {
-  const requestObj = {
-    key: '<MY_API_KEY>',
-    q: '<QUERY_STRING>',
-  };
+  return opencage
+    .geocode({ q: address, key: "cdbb04402a5c4f32ae992b19f6b19d41" })
+    .then((data) => {
+      let parsedData = JSON.parse(JSON.stringify(data));
+      return parsedData;
+    })
+    .then((parsedData) => {
+      let location = JSON.parse(JSON.stringify(parsedData.results[0].geometry));
+      return location;
+    })
 
-  // return something...
+    .catch((error) => {
+      console.log("error", error.message);
+    });
 };
 
-getPositionFromAddress(
-  '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'
-).then((response) => console.log(response));
+module.exports = { getPositionFromAddress };
+
+//  getPositionFromAddress("1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8").then((response) => console.log(response));
+// getPositionFromAddress("Quebec City, QC").then((response) => console.log(response));
+// getPositionFromAddress("Vancouver, BC").then((response) => console.log(response));
