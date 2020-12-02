@@ -17,7 +17,7 @@ const makeAllCaps = (array) => {
   })
   return myPromise1
 };
-
+//every true or false
 const sortWords = (array) => {
   myPromise2 =  new Promise((resolve, reject) => {
     if (array.every(element => typeof element === "string")){
