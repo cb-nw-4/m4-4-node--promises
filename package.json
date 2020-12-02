@@ -7,7 +7,7 @@
     "dependencies": {
         "dotenv": "^8.2.0",
         "nodemon": "^2.0.2",
-        "opencage-api-client": "^0.7.1",
+        "opencage-api-client": "^0.10.0",
         "request": "^2.88.2",
         "request-promise": "^4.2.5"
     }
