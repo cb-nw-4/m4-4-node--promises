@@ -5,7 +5,7 @@
 const request = require('request-promise');
 
 const testGreeting = () => {
-  return request('https://journeyedu.herokuapp.com') // 1
+  return request('https://journeyedu.herokuapp.com/hello') // 1
     .then((response) => {
       return JSON.parse(response);
     })
