@@ -20,13 +20,12 @@ const getDistanceFromIss = (address) => {
   const p1 = getPositionFromAddress(address);
   const p2 = getIssPosition()
 
-  Promise.all([p1, p2])
+  return Promise.all([p1, p2])
     .then(result => getDistance (result[0], result[1]))
-    .then(result => console.log("The Distance equal to", result))
     .catch(err => (console.log("Erro", err)))
 
 };
 
 getDistanceFromIss(
   '1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8'
-)
+).then(result => console.log("The Distance equal to", result))
