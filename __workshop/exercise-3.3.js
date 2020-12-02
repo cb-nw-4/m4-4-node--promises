@@ -6,7 +6,7 @@ require('dotenv').config({path: '../.env'});
 function getAddressFromPosition(lat, lng) {
   const requestObj = {
     key: process.env.OPENCAGE_API_KEY,
-    q: lat, lng,
+    q: `${lat}, ${lng}`,
   };
 
   // return ...
@@ -16,7 +16,7 @@ function getAddressFromPosition(lat, lng) {
   .catch((err)=>console.log(err));
 }
 
-getAddressFromPosition('48.8584', '2.2945').then((response) =>
+getAddressFromPosition('48.858262', '2.294496').then((response) =>
   console.log(response)
 );
 
