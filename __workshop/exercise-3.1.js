@@ -13,11 +13,16 @@ const getIssPosition = () => {
           delete response.iss_position.longitude;
         response.iss_position.lat = response.iss_position.latitude;
           delete response.iss_position.latitude;
-        return response // 2
-      })
-      .catch((err) => {
+        return response.iss_position;// 2
+      }).then((response) => {
+        response.lat = Number(response.lat);
+        response.lng = Number(response.lng);
+        return response;
+      }).catch((err) => {
         return err.error ? JSON.parse(err.error) : err;
       });
 };
 
-getIssPosition().then((result) => console.log(result));
+module.exports = { getIssPosition };
+
+//getIssPosition().then((result) => console.log(result));

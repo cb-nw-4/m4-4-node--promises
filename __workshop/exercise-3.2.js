@@ -20,8 +20,10 @@ const getPositionFromAddress = (address) => {
   });
 };
 
+module.exports = { getPositionFromAddress };
 
-getPositionFromAddress('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8').then((response) => console.log(response));
+
+//getPositionFromAddress('1455 Boulevard de Maisonneuve O, Montréal, QC H3G 1M8').then((response) => console.log(response));
 //getPositionFromAddress("John Cleere's").then((response) => console.log(response));
 //getPositionFromAddress().then((response) => console.log(response));
 
