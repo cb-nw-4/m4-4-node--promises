@@ -5,10 +5,10 @@
 const request = require('request-promise');
 
 const greeting = (langCode) => {
-  return request('<URL>') // 1
+  return request(`https://journeyedu.herokuapp.com/hello/${langCode}`) // 1
     .then((response) => JSON.parse(response))
     .then((parsedResponse) => {
-      return; // 2
+      return parsedResponse.data.text
     })
     .catch((err) => console.log('Error: ', err));
 };
