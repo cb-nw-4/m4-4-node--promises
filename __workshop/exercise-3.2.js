@@ -23,3 +23,4 @@ getPositionFromAddress(
 
 
 /*console.dir(response,{depth:null}));*/
+module.exports = { getPositionFromAddress };
